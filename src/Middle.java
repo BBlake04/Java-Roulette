@@ -63,7 +63,7 @@ public class Middle extends Thread {
 	public static void checkWin(){
 		int winningNum, guess;
 		Random random = new Random();
-		winningNum = random.nextInt(10 - 1 + 1) + 1; // 1-10
+		winningNum = random.nextInt(10 - 1 + 1) + 1; // Brute forcing random 1-10
 		guess = GUI.getGuess();
 		
 		Platform.runLater(() -> { 
@@ -94,7 +94,7 @@ public class Middle extends Thread {
 		
 	}
 	
-	public static void initializeHashmap(){
+	public static void initializeHashmap(){	// Hashmap for the "cash" reward.
 		hm.put(1, 5000);
 		hm.put(2, 7500);
 		hm.put(3, 8000);
