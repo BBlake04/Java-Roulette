@@ -1,5 +1,5 @@
 # Java-Roulette
-This is a project for a Java roulette game that uses live updating gfx.
+This is a project for a Java roulette game that uses live updating gfx and hashmapping.
 The executable jar file is the finished work and will create a DB file named pastguesses.
 
 The idea was to build a full stack foundation that could be easily altered to add components later in time.
