@@ -111,7 +111,7 @@ public class GUI extends Application {
 			}
         });
         
-        btn4.setOnAction(new EventHandler<ActionEvent>() { // Have this select from SQL database or something.
+        btn4.setOnAction(new EventHandler<ActionEvent>() { // Have this select from SQL database to alter input.
             @Override
             public void handle(ActionEvent event) {
 				Stage nameChange = new Stage();
@@ -196,7 +196,7 @@ public class GUI extends Application {
         primaryStage.show();
         
 	}
-	
+	//Everything below is pretty much just setters.
 	public static void changeLabel2Text(String text){
 		
 		label2.setText(text);
