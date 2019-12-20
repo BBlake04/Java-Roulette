@@ -1,6 +1,6 @@
 # Java-Roulette
 This is a project for a Java roulette game that uses live updating gfx.
-The executable jar file is the finishe work and will create a DB file named pastguesses.
+The executable jar file is the finished work and will create a DB file named pastguesses.
 
 The idea was to build a full stack foundation that could be easily altered to add components later in time.
 There's no points to win (other than pride) but the backend does use SQLite to keep track of player names, and past guesses.
