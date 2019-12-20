@@ -1,5 +1,5 @@
 
-public interface CreatePlayer {
+public interface CreatePlayer {		//Just creates an interface with 2 setters and getters.
 
 	public abstract void setName(String name);
 
