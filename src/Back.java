@@ -12,12 +12,12 @@ public class Back {
 		Connection c = null;
 	    Statement stmt = null;
 	      
-	      try {
+	      try {	//Attempts to load pastguesses.db but will create one later if it cannot find it
 	    	  Class.forName("org.sqlite.JDBC");
 	          c = DriverManager.getConnection("jdbc:sqlite:pastguesses.db");
 	          System.out.println("Opened database successfully");
 
-	          stmt = c.createStatement();
+	          stmt = c.createStatement();	//Uses primary key to sort guesses chronologically and shows player name and guess number
 	          String sql = "CREATE TABLE IF NOT EXISTS PASTGUESSES " +
 	        		  		 "(ID INTEGER PRIMARY KEY     NOT NULL," +
 	                         " PLAYER           TEXT    NOT NULL, " + 
@@ -34,10 +34,10 @@ public class Back {
 	public static void insertGuess(){
 		Connection c = null;
 		PreparedStatement stmt = null;
-		String add = "INSERT INTO PASTGUESSES (PLAYER, GUESS) VALUES(?,?)";
+		String add = "INSERT INTO PASTGUESSES (PLAYER, GUESS) VALUES(?,?)";	//Insert line taking 2 parameters as a value
 
 		try {
-			Class.forName("org.sqlite.JDBC");
+			Class.forName("org.sqlite.JDBC");	//Begins getting and adding the 2 parameters to the database
 			c = DriverManager.getConnection("jdbc:sqlite:pastguesses.db");
 			stmt = c.prepareStatement(add);
 			stmt.setString(1, GUI.label2.getText());
@@ -56,7 +56,7 @@ public class Back {
 		
 		StringBuilder builder = new StringBuilder();
 		Connection c = null;
-		PreparedStatement stmt = null;
+		PreparedStatement stmt = null;	//Line below pulls the last 10 values taken into the database.
 		String sql = "SELECT * FROM (SELECT * FROM PASTGUESSES ORDER BY ID DESC LIMIT 10) ORDER BY ID ASC";
 
 		try {
@@ -65,7 +65,7 @@ public class Back {
 			stmt = c.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			
-			while (rs.next()){
+			while (rs.next()){	//Formats the stringbuilder for the user to see whats in the database
 				builder.append("PLAYER: " + rs.getString("PLAYER") + " GUESS: " + rs.getString("GUESS") + "\n");
 			}
 			String finishedString = builder.toString();
